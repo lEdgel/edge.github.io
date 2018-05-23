@@ -6,18 +6,66 @@
     <title>?</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script>
-        window.scrollTo({
-            top: 1000,
-            behavior: "smooth"
-        });
+
+        let a;
+        a = getElementById("body");
+
+        function scrollDownBy() {
+            window.scrollBy({
+                top: 800,
+                behavior: "smooth"
+            });
+        }
+
+        function scrollDownTo() {
+            window.scrollTo({
+                top: 1900,
+                behavior: "smooth"
+            });
+        }
+
     </script>
 </head>
 
-<body>
+<body id="body">
 
 <h1 class="titolo">Cos'è HTTP?</h1>
 
-<a onclick="scrollTo()"><div id="button2">Cosa fa?</div></a>
+<a onclick="scrollDownBy()"><div id="button2">Cosa fa?</div></a>
+
+<h3 class="titolo">Prima di tutto, HTTP è un protocollo.</h3>
+
+<p>HTTP è un protocollo di comunicazione che permette lo scambio di messaggi tra client (il browser) e il server tramite messaggi testuali. <br>
+
+    <img src="lol.png">
+
+I messaggi inviati dal client si chiamano <span>request.</span> Invece i messaggi inviati dal server sono definiti <span>response.</span> <br><br>
+
+I messaggi possono essere intercettati da device intermediari detti <span>proxy</span> che possono svolgere diverse funzioni, tra cui <span>cache</span> o <span>gateway.</span><br><br>
+
+    L'HTTP è un protocollo di <span>livello 7 (applicazione),</span> e si appoggia al livello di <span>trasporto</span> per far avvenire le effettive comunicazioni. <br>
+
+    Lo <span>user-agent</span> è un entità/tool che agisce per volontà dell'utente (in questo caso quasi sempre il browser). Quello che fa è mandare un <span>request</span>
+    al server, richiedendo cosi la consegna di una certa risorsa. <br>
+
+    Questo protocollo in genere trasporta dati come pagine web (da cui l'acronimo <span>HyperText Transfer Protocol)</span> ma possono essere anche immagini, dati di form, video, etc.<br>
+
+        <a onclick="scrollDownTo()"><div id="button2">I messaggi</div></a>
+
+            <img src="lel.png" style="margin-top: 350px"> <br>
+
+        <p>La sintassi di base di un comando <span>HTTP-request</span> comprende:</p>
+                <ul>
+                    <li>Il verbo del metodo (esempi: <span>GET, POST, OPTIONS, HEAD, PUT</span>)</li>
+                    <li>L'URL della risorsa</li>
+                    <li>Versione del protocollo</li>
+                    <li>Header opzionali che specificano informazioni aggiuntive al server</li>
+                </ul>
+
+        </p>
+
+        <p>Le informazioni restituite dal server in un <span></span></p>
+
 
 
 </body>
