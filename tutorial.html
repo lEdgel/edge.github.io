@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>?</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!--suppress JSAnnotator -->
+    <script>
+        $(document).ready(function() {
+
+            $('body').on({
+            'mousewheel': function(e) {
+                e.preventDefault();
+            }
+        })
+        });
+
+        function scrollDownBy() {
+            let a = document.getElementById('target');
+            a.scrollIntoView({block: 'start', behavior: 'smooth' });
+        };
+
+        function enableScroll() {
+            $('body').unbind('mousewheel')
+        };
+
+
+
+    </script>
+</head>
+
+<body>
+
+<h1 class="titolo">Cos'è HTTP?</h1>
+
+<a onclick="scrollDownBy(); enableScroll();"><div id="button2">Cosa fa?</div></a>
+
+<h3 class="titolo" id="target">Prima di tutto, HTTP è un protocollo.</h3>
+
+<p>HTTP è un protocollo di comunicazione che permette lo scambio di messaggi tra client (il browser) e il server tramite messaggi testuali. <br>
+
+    <img src="lol.png">
+
+I messaggi inviati dal client si chiamano <span>request.</span> Invece i messaggi inviati dal server sono definiti <span>response.</span> <br><br>
+
+I messaggi possono essere intercettati da device intermediari detti <span>proxy</span> che possono svolgere diverse funzioni, tra cui <span>cache</span> o <span>gateway.</span><br><br>
+
+    L'HTTP è un protocollo di <span>livello 7 (applicazione),</span> e si appoggia al livello di <span>trasporto</span> per far avvenire le effettive comunicazioni. <br><br>
+
+    Lo <span>user-agent</span> è un entità/tool che agisce per volontà dell'utente (in questo caso quasi sempre il browser). Quello che fa è mandare un <span>request</span>
+    al server, richiedendo cosi la consegna di una certa risorsa. <br>
+
+    Questo protocollo in genere trasporta dati come pagine web (da cui l'acronimo <span>HyperText Transfer Protocol)</span> ma possono essere anche immagini, dati di form, video, etc.<br>
+
+    <hr>
+
+        <h1 class="titolo">I messaggi</h1>
+
+        <p>La sintassi di base di un comando <span>HTTP-request</span> comprende:</p>
+                <ul>
+                    <li>Il verbo del metodo (esempi: <span>GET, POST, OPTIONS, HEAD, PUT</span>)</li>
+                    <li>L'URL della risorsa</li>
+                    <li>Versione del protocollo</li>
+                    <li>Header opzionali che specificano informazioni aggiuntive al server</li>
+                </ul>
+
+        <img src="lel.png">
+
+        </p>
+
+        <p>Le informazioni restituite dal server in un messaggio HTTP-response include:<span></span></p>
+                <ul>
+                    <li>Versione del protocollo</li>
+                    <li>Lo <span>status code</span></li>
+                    <li>Una breve descrizione del significato di tale status code</li>
+                    <li>HTTP headers, simili a quelli di HTTP-request</li>
+                    <li>Il "corpo" del messaggio, se è stato richiesto dal client (spesso l'HTML di una pagina web)</li>
+                </ul>
+
+        <img src="lul.png"><br>
+
+        <hr>
+
+        <h1 class="titolo">Gli status code</h1>
+<p>Per comunicare il risultato della comunicazione all'utente, il server restituisce dei codici di stato nel suo messaggio <span>HTTP-response</span>. <br>
+    Ci sono <span>5 categorie</span> di codici:
+        <ul>
+            <li>1xx - <span>Informativo</span></li>
+            <li>2xx - <span>Successo</span></li>
+            <li>3xx - <span>Redirection</span></li>
+            <li>4xx - <span>Errore lato client</span></li>
+            <li>5xx - <span>Errore lato server</span></li>
+        </ul>
+
+    <hr>
+
+    <h1 class="titolo">Esempi</h1>
+        <ul>
+            <li><span>100 - Continue: </span>Il server non ha del tutto ricevuto la richiesta del client, non l'ha ancora scartata e sta aspettando di riceverla.</li>
+            <li><span>101 - Switching Protocols: </span>Il server indica di aver capito la richiesta del client di cambiare protocollo di comunicazione.</li> <br>
+            <li><span>200 - OK: </span>La richiesta è stata processata con successo</li>
+            <li><span>201 - Created: </span>La creazione della risorsa richiesta dal client è stata completata.</li> <br>
+            <li><span>301 - Moved Permanently: </span>La risorsa cercata è stata spostata permanentemente. Il client deve usare il nuovo URL per richiedere tale risorsa.</li>
+            <li><span>302 - Found: </span>La risorsa cercata dal client risiede temporaneamente su un altro URI.</li> <br>
+            <li><span>400 - Bad Request: </span>La richiesta è stata rifiutata per errore commessi dal client (sintassi, modalità di framing sbagliata, ecc).</li>
+            <li><span>403 - Forbidden: </span>L'accesso della risorsa al client è stato negato al server. Il server non è obbligato a comunicare la motivazione.</li>
+            <li><span>404 - Not Found: </span>Classico. La risorsa non è stata trovata.</li> <br>
+            <li><span>500 - Internal Server Error: </span>Il server ha riscontrato una condizione inaspettata che non gli permette di eseguire la richiesta.</li>
+            <li><span>501 - Not Implemented: </span> Il server non supporta tale tipo di comando.</li>
+            <li><span>502 - Bad Gateway: </span>Se il server funzionava da intermediario come proxy o gateway e ha riscontrato una richiesta "invalida", restituisce tale codice.</li>
+            <li><span>505 - HTTP Version Not Supported: </span>Il server non supporta la versione di HTTP di tale messaggio, o rifiuta di processarlo per lo stesso motivo.</li>
+        </ul>
+</p>
+
+</body>
+
+</html>
